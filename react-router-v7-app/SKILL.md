@@ -167,3 +167,28 @@ app/routes
     |
     +-- route.tsx       # Resource route file
 ```
+
+## 7. Advanced Routing Patterns
+
+### Nested Routes for UI Segmentation
+Use nested routes to split complex pages (e.g., tabs) into independent route modules.
+- Parent route renders shared UI and `<Outlet />`.
+- Child routes handle their own data loading (`loader`) and mutations (`action`).
+- Reduces prop drilling and isolates logic.
+
+Example (Tabs):
+- `routes/user.tsx`: Renders tabs navigation and `<Outlet />`.
+- `routes/user.profile.tsx`: Renders profile tab content.
+- `routes/user.account.tsx`: Renders account tab content.
+
+### Route-based Modals
+Manage modal state via URLs instead of `useState`.
+- Define the modal as a child route.
+- Parent route renders the background UI and `<Outlet />`.
+- Modal component renders inside the `<Outlet />` (often using a Dialog component).
+- Closing the modal is a navigation action (e.g., `<Link to="..">`).
+
+Example:
+- `routes/users.tsx`: Lists users and contains `<Outlet />`.
+- `routes/users.new.tsx`: Renders the "Create User" modal.
+
