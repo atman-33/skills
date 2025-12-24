@@ -1,22 +1,17 @@
 ---
-name: openspec-skill
-description: Provides guidelines for running openspec commands, especially the validate command, in non-interactive mode.
+name: openspec
+description: Guidelines for using the openspec CLI tool via MCP, specifically for running validation commands in non-interactive mode. Use this skill when you need to validate changes or specs using openspec and want to avoid interactive prompts that cause failures in the MCP environment.
 ---
 
-# OpenSpec Skill
+# OpenSpec Guidelines
 
-When executing `openspec` commands via the MCP server, commands that require interactive mode may fail.
-In particular, `openspec validate` and `openspec validate --strict` require interactive selection and are not suitable for execution via MCP.
+The `openspec` CLI defaults to interactive mode for some commands, which causes failures in the MCP environment. Use the following non-interactive flags instead.
 
-Instead, please use the following non-interactive commands:
+## Validation Commands
 
-- `openspec validate --all`
-  - Validates all changes and specs.
-- `openspec validate --changes`
-  - Validates only change proposals.
-- `openspec validate --specs`
-  - Validates only specs.
-- `openspec validate <item-name>`
-  - Validates a specific item (change or spec name).
+Avoid `openspec validate` (interactive). Use these specific targets instead:
 
-By using these flags, you can avoid interactive mode and execute validation successfully.
+- **Validate everything**: `openspec validate --all`
+- **Validate changes only**: `openspec validate --changes`
+- **Validate specs only**: `openspec validate --specs`
+- **Validate specific item**: `openspec validate <item-name>`
