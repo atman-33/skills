@@ -1,5 +1,5 @@
 ---
-name: terminal-skill
+name: terminal
 description: Best practices for executing terminal commands, prioritizing the `execute_command` tool from the `terminal-runner` MCP server. Use when output is missing, truncated, or not returned (common in WSL), and fall back to capturing stdout/stderr by writing to `.tmp/copilot/` for inspection.
 ---
 

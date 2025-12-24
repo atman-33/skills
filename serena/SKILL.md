@@ -1,5 +1,5 @@
 ---
-name: serena-skill
+name: serena
 description: Guidelines for activating and using Serena MCP projects reliably. Use when Codex needs to work with Serena tools (semantic search, refactors, code navigation), especially when starting work in a new directory. Includes WSL-specific activation guidance using UNC paths (\\wsl$\\Ubuntu...) with a Linux-path fallback.
 ---
 
